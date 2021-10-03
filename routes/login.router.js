@@ -7,7 +7,7 @@ router.use(async (req, res) => {
             const { password } = req.body;
             
             if (user.password === password ){
-                user = await user.populate(['watchLater', 'likedVideos', 'playlist']); 
+                user = await user.populate(['watchLater', 'likedVideos', 'playlist', 'watchHistory']); 
                 user.createdAt = undefined;
                 user.updatedAt = undefined;
                 user.__v = undefined;
