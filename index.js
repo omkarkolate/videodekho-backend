@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 const corsOptions = {
-  origin: ['https://videodekho.netlify.app' ,'https://e78pf.csb.app'],
+  origin: ['https://videodekho.netlify.app' ,'https://0l80y.csb.app'],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -19,7 +19,7 @@ initDatabaseConnection();
 const { routeNotFound, errorHandler, findUserByEmailId  } = require("./middleware/index.js");
 
 //Routes
-const { login, signup, user, video, likedVideo, watchLater, playlist, history } = require("./routes/index.js");
+const { login, signup, user, video, likedVideo, watchLater, playlist, watchHistory } = require("./routes/index.js");
 
 
 app.get('/', (req, res) => {
@@ -33,7 +33,7 @@ app.use("/videos", video);
 app.use("/likedVideos", likedVideo);
 app.use("/watchLater", watchLater);
 app.use("/playlist", playlist);
-app.use("/history", history);
+app.use("/watchHistory", watchHistory);
 
 /*
  * Note: Keep at end to handle errors and 404s

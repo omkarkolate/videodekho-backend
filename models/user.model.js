@@ -8,7 +8,7 @@ const userSchema = new Schema({
     watchLater: [{ type: Schema.Types.ObjectId, ref: 'video' }],
     likedVideos: [{ type: Schema.Types.ObjectId, ref: 'video' }],
     playlist: [{ type: Schema.Types.ObjectId, ref: 'video' }],
-    history: [{ type: Schema.Types.ObjectId, ref: 'video' }],
+    watchHistory: [{ type: Schema.Types.ObjectId, ref: 'video' }],
 }, { timestamps: true });
 
 const User = model('user', userSchema);
